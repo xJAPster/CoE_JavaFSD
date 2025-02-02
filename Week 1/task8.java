@@ -1,3 +1,12 @@
+/*
+ * Objective: Implement serialization and deserialization of a binary tree without using any built-in serialization functions.
+    • Details: The serialization of a tree to a string must be such that it can be deserialized back to the original tree structure.
+    • Functions to Implement:
+        ◦ String serialize(TreeNode root): This function should take the root node of a binary tree and return a string representation of the tree. The serialization should capture all necessary details to allow the tree's structure and node values to be reconstructed.
+        ◦ TreeNode deserialize(String data): This function takes a string representation of a binary tree and reconstructs the tree, returning the root node of the reconstructed tree.
+
+ */
+
 class TreeNode {
     public int val;
     public TreeNode left, right;
