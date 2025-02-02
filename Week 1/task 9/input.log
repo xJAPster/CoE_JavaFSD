@@ -1,0 +1,13 @@
+log_content = """INFO Starting application
+ERROR NullPointerException at line 42
+INFO User logged in
+WARNING Disk space running low
+ERROR File not found
+INFO Task completed successfully
+ERROR Out of memory
+WARNING High CPU usage detected
+INFO Application shutting down
+"""
+
+with open("/mnt/data/input.log", "w") as file:
+    file.write(log_content)
