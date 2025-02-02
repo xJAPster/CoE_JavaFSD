@@ -53,7 +53,7 @@ class TaskManager {
             taskMap.remove(id);
             System.out.println("Task removed successfully");
         } else {
-            System.out.println("Task with ID " + id + " not found");
+            System.out.println("Task with ID :" + id + " was not found");
         }
     }
 
