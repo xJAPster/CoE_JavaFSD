@@ -1,5 +1,3 @@
-import java.util.* ;
-
 /*
  * Objective: Implement a function to check if a linked list has a cycle. 
 Details: Create a LinkedList class with a Node inner class. Use the two-pointer technique (Floyd’s Tortoise and Hare) to detect a cycle.
