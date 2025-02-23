@@ -24,12 +24,22 @@ const MyRoutines: React.FC = () => {
     }
   }, []);
 
+  // Update a routine (used for reordering exercises)
   const updateRoutine = (updatedRoutine: Routine) => {
     const updatedRoutines = routines.map(r =>
       r.id === updatedRoutine.id ? updatedRoutine : r
     );
     setRoutines(updatedRoutines);
     localStorage.setItem('routines', JSON.stringify(updatedRoutines));
+  };
+
+  // Safely delete a routine after confirmation
+  const handleDeleteRoutine = (routineId: string) => {
+    if (window.confirm("Are you sure you want to delete this routine?")) {
+      const updatedRoutines = routines.filter(routine => routine.id !== routineId);
+      setRoutines(updatedRoutines);
+      localStorage.setItem('routines', JSON.stringify(updatedRoutines));
+    }
   };
 
   return (
@@ -39,7 +49,12 @@ const MyRoutines: React.FC = () => {
         <p>No routines found.</p>
       ) : (
         routines.map(routine => (
-          <RoutineItem key={routine.id} routine={routine} updateRoutine={updateRoutine} />
+          <RoutineItem 
+            key={routine.id} 
+            routine={routine} 
+            updateRoutine={updateRoutine} 
+            deleteRoutine={handleDeleteRoutine} 
+          />
         ))
       )}
     </main>
@@ -49,9 +64,10 @@ const MyRoutines: React.FC = () => {
 interface RoutineItemProps {
   routine: Routine;
   updateRoutine: (routine: Routine) => void;
+  deleteRoutine: (routineId: string) => void;
 }
 
-const RoutineItem: React.FC<RoutineItemProps> = ({ routine, updateRoutine }) => {
+const RoutineItem: React.FC<RoutineItemProps> = ({ routine, updateRoutine, deleteRoutine }) => {
   const [exercises, setExercises] = useState(routine.exercises);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
 
@@ -76,7 +92,15 @@ const RoutineItem: React.FC<RoutineItemProps> = ({ routine, updateRoutine }) => 
   };
 
   return (
-    <div className="routine">
+    <div className="routine" style={{ position: 'relative' }}>
+      {/* Delete Button */}
+      <button 
+        className="delete-btn" 
+        onClick={() => deleteRoutine(routine.id)}
+        title="Delete Routine"
+      >
+        X
+      </button>
       <h2>{routine.name}</h2>
       <ul className="exercise-list">
         {exercises.map((ex, index) => (

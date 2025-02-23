@@ -1,126 +1,182 @@
-/* Global Styles */
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    text-align: center;
-  }
-  
-  header {
-    background-color: #2c3e50;
-    padding: 1rem;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+
+header {
+  background-color: #2c3e50;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+
+nav ul li {
+  margin: 0 1.5rem;
+}
+
+nav ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #3498db;
+}
+
+nav ul li a.active {
+  background-color: #fff;
+  color: #2c3e50;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+}
+
+
+.navbar-logo {
+  width: 50px;
+  height: auto;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
+.container {
+  padding: 2rem;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1, h2 {
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input, 
+button {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+button {
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #219150;
+}
+
+
+.exercise-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.exercise-list li {
+  background: #f1f1f1;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: move;
+}
+
+
+.routine {
+  background: #fff;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: left;
+  position: relative; 
+}
+
+
+.delete-btn {
+  background-color: #e74c3c; 
+  border: none;
+  color: #fff; 
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+  background-color: #c0392b; 
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.added-exercises-container {
+  background-color: #f0f0f0; 
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
   nav ul li {
-    margin: 0 1rem;
-  }
-  
-  nav ul li a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    color: #3498db;
-  }
-  
-  .container {
-    padding: 2rem;
-  }
-  
-  /* Form and Page Styles */
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  
-  h1, h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  input, 
-  button {
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  input {
-    width: 100%;
-    margin-top: 0.5rem;
-  }
-  
-  button {
-    background-color: #27ae60;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #219150;
-  }
-  
-  /* Exercise List */
-  .exercise-list {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-  }
-  
-  .exercise-list li {
-    background: #f1f1f1;
-    margin: 0.5rem 0;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    cursor: move;
-  }
-  
-  /* Routine Card */
-  .routine {
-    background: #fff;
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: left;
-  }
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
-    nav ul li {
       margin: 0.5rem;
-    }
-    main {
+  }
+  main {
       padding: 1rem;
-    }
   }
-  
-  /* Simple Fade-In Animation */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
+}

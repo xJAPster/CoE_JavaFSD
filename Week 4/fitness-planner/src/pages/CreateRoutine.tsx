@@ -99,7 +99,9 @@ const CreateRoutine: React.FC = () => {
         </div>
         <button onClick={addExercise}>Add Exercise</button>
       </div>
-      <div className="exercise-list">
+      
+      {/* Added Exercises Section with grey background */}
+      <div className="added-exercises-container">
         <h2>Exercises</h2>
         {exercises.length === 0 ? (
           <p>No exercises added yet.</p>

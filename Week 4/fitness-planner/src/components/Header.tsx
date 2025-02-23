@@ -1,17 +1,45 @@
 // src/components/Header.tsx
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
+import traintrackLogo from '../assets/traintrack_logo.png';
 
 const Header: React.FC = () => {
   return (
     <header>
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/create">Create Routine</Link></li>
-          <li><Link to="/routines">My Routines</Link></li>
-          <li><Link to="/progress">Progress Tracker</Link></li>
+          <li>
+            <NavLink 
+              to="/" 
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink 
+              to="/create" 
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Create Routine
+            </NavLink>
+          </li>
+          <li>
+            <NavLink 
+              to="/routines" 
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              My Routines
+            </NavLink>
+          </li>
+          <li>
+            <NavLink 
+              to="/progress" 
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Progress Tracker
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

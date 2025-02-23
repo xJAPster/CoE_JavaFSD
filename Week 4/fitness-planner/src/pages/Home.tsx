@@ -5,9 +5,9 @@ import traintrackLogo from '../assets/traintrack_logo.png';
 const Home: React.FC = () => {
   return (
     <main>
-      <h1>Welcome to Your Fitness Planner</h1>
-      <p>Create and track your custom workout routines.</p>
-      {/* Logo placed below the text */}
+      <h1>Welcome to TrainTrack !</h1>
+      <p>Create and track your custom set workout routines.</p>
+      {}
       <img 
         src={traintrackLogo} 
         alt="TrainTrack Logo" 
