@@ -1,4 +1,4 @@
-// src/pages/MyRoutines.tsx
+
 import React, { useState, useEffect } from 'react';
 
 interface Exercise {
@@ -24,7 +24,6 @@ const MyRoutines: React.FC = () => {
     }
   }, []);
 
-  // Update a routine (used for reordering exercises)
   const updateRoutine = (updatedRoutine: Routine) => {
     const updatedRoutines = routines.map(r =>
       r.id === updatedRoutine.id ? updatedRoutine : r
@@ -33,7 +32,7 @@ const MyRoutines: React.FC = () => {
     localStorage.setItem('routines', JSON.stringify(updatedRoutines));
   };
 
-  // Safely delete a routine after confirmation
+  
   const handleDeleteRoutine = (routineId: string) => {
     if (window.confirm("Are you sure you want to delete this routine?")) {
       const updatedRoutines = routines.filter(routine => routine.id !== routineId);
@@ -93,7 +92,6 @@ const RoutineItem: React.FC<RoutineItemProps> = ({ routine, updateRoutine, delet
 
   return (
     <div className="routine" style={{ position: 'relative' }}>
-      {/* Delete Button */}
       <button 
         className="delete-btn" 
         onClick={() => deleteRoutine(routine.id)}

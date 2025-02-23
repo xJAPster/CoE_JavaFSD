@@ -1,4 +1,4 @@
-// src/pages/Home.tsx
+
 import React from 'react';
 import traintrackLogo from '../assets/traintrack_logo.png';
 
