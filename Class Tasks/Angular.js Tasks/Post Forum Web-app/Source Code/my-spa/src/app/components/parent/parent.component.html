@@ -1,0 +1,11 @@
+<div class="parent-container">
+  <h2>Posts List</h2>
+  <p *ngIf="selectedMessage">{{ selectedMessage }}</p>
+  <div class="posts-list">
+    <app-child 
+      *ngFor="let post of posts" 
+      [post]="post" 
+      (childClicked)="onChildClick($event)">
+    </app-child>
+  </div>
+</div>

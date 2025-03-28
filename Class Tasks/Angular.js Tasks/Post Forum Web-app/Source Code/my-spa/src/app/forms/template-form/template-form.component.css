@@ -1,0 +1,31 @@
+.form-container {
+  max-width: 500px;
+  margin: 2em auto;
+  padding: 1em;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  background: #e9f5ff;
+}
+.form-container label {
+  display: block;
+  margin-top: 0.5em;
+}
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.form-container button {
+  background: #007bff;
+  border: none;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.form-container button:disabled {
+  background: #aaa;
+}

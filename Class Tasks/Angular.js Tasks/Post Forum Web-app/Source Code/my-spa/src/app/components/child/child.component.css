@@ -1,0 +1,21 @@
+.child-container {
+  border: 1px solid #ccc;
+  padding: 1em;
+  border-radius: 4px;
+  background: #fff;
+}
+.child-container h3 {
+  margin: 0;
+  cursor: pointer;
+}
+.child-container button {
+  background: #007bff;
+  border: none;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.child-container button:hover {
+  background: #0056b3;
+}

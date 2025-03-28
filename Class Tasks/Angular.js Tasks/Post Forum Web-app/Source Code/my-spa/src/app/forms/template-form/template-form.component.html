@@ -1,0 +1,10 @@
+<div class="form-container">
+  <h2>Add New Post</h2>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <label for="title">Title:</label>
+    <input type="text" name="title" [(ngModel)]="model.title" required />
+    <label for="body">Body:</label>
+    <textarea name="body" [(ngModel)]="model.body" required></textarea>
+    <button type="submit" [disabled]="form.invalid">Submit Post</button>
+  </form>
+</div>
